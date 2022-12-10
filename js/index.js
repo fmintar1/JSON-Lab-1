@@ -27,17 +27,17 @@ window.onload = function()
 		this.y = _y;
 
 		//lets give it velocity X and Y
-		this.xVel = 10 + Math.random()*20;
-		this.yVel = 1;
+		this.xVel = -50 + Math.random()*100;
+		this.yVel = -50 + Math.random()*100;
 
 		//the box width and height
-		this.width = 20;
-		this.height = 20;
+		this.width = 2;
+		this.height = 2;
 
 		//random colors for our box
-		/*this.r = Math.round(Math.random()*255);
+		this.r = Math.round(Math.random()*255);
 		this.g = Math.round(Math.random()*255);
-		this.b = Math.round(Math.random()*255);*/
+		this.b = Math.round(Math.random()*255);
 
 		this.randomColor = randomInt(0,colorsArray.colors.length-1);
 		this.r = colorsArray.colors[this.randomColor].red;
@@ -65,20 +65,20 @@ window.onload = function()
 			//check the left window border
 			if(this.x<0){
 				this.x = 0;		//set its position to 0
-				this.xVel *= -1; //make it bounce
+				this.xVel *= 50; //make it bounce
 			}
 
 			//check the right border
 			if(this.x > W - this.width)
 			{
 				this.x = W - this.width; //set its position to 0
-				this.xVel *= -1; //make it bounce
+				this.xVel *= 50; //make it bounce
 			}
 
 			//check the top border
 			if(this.y < 0){
 				this.y = 0;	//this is what happen when u copy/paste
-				this.yVel *= -1; //make it bounce
+				this.yVel *= 50; //make it bounce
 			}
 
 			// the reaason why we did this if functin so the boxes dont
@@ -91,11 +91,11 @@ window.onload = function()
 			if(this.y > H - this.height)
 			{
 				//when it bounces off the bottom decrease the ball speed
-				this.xVel *= .5;
-				this.yVel *= .5;
+				this.xVel *= 20;
+				this.yVel *= 20;
 
 				this.y = H - this.height; //set its position to 0
-				this.yVel *= -1; //make it bounce
+				this.yVel *= 50; //make it bounce
 			}
 
 			//move add speed to our x/y
@@ -131,9 +131,9 @@ window.onload = function()
 			boxes[i].update();
 	}
 
-	setInterval(function(){boxes.push(new Box(0,0))},1000);
+	setInterval(function(){boxes.push(new Box(W/2,H/2))},1);
 
 	//set interval so we can draw then update our drawing
 	// every 30 milisecond
-	setInterval(draw,30);
+	setInterval(draw,60);
 }

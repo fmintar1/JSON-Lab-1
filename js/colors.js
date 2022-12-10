@@ -1,5 +1,5 @@
-var colorsArray : {
-    colors=[
+var colorsArray = {
+    "colors" : [
         {
             "name":"green",
             "red":"64",
@@ -10,14 +10,14 @@ var colorsArray : {
             "name":"yellow",
             "red":"239",
             "green":"183",
-            "blue":"62"
+            "blue":"62",
         },
         {
-            name:"red",
-            red:"192",
-            green:"46",
-            blue:"35"
-        }
+            "name":"red",
+            "red":"192",
+            "green":"46",
+            "blue":"35",
+        },
         {
             "name":"blue",
             "red":"19",
@@ -25,9 +25,10 @@ var colorsArray : {
             "blue":"144",
         },
         {
-            "name"="orange",
-            "red"="253",
-            "green"="92",
-            "blue"="48"
+            "name":"orange",
+            "red":"253",
+            "green":"92",
+            "blue":"48"
         },
     ]
+    }
